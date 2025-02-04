@@ -1,0 +1,77 @@
+curl --location 'https://tamm-convai-dev-apigw.azure-api.net/conv-ai-engine/rag_search' \
+
+--header 'x-tamm-search-key: 3f49dec6-847f-404a-83da-0add176a066a' \
+
+--header 'Content-Type: application/json' \
+
+--data '{
+
+    "prompt_name": "gov-academy-course-query",
+
+    "index_configs": [
+
+        {
+
+            "name": "gov-academy-courses",
+
+            "number_of_results": 10,
+
+            "select_fields": [
+
+                    "Name",
+
+                    "Summary",
+
+                    "Type",
+
+                    "Skills",
+
+                    "Language",
+
+                    "Proficiency",
+
+                    "Duration",
+
+                    "URL"
+
+                ],
+
+            "full_text_fields": ["FullText"],
+
+            "vector_fields": ["FullTextVector"]
+
+        }
+
+    ],
+
+        "messages": [
+
+            {
+
+                "role": "user",
+
+                "content": "i want to learn ai"
+
+            },
+
+            {
+
+                "role": "assistant",
+
+                "content": "There are several courses available for learning AI. Here are a few options you might consider:\n\n1. **Introduction to Artificial Intelligence**: This course is designed for project managers, product managers, directors, executives, and students starting a career in AI. It provides a high-level overview of AI tools, machine learning, neural networks, and deep learning. [Learn more](https://learn.adsg.gov.ae/course/view.php?id=11515).\n\n2. **Artificial Intelligence for Students**: This course covers the basics of AI, including natural language processing, computer vision, and machine learning. It also explores the relationship between humans and AI. [Learn more](https://learn.adsg.gov.ae/course/view.php?id=3635).\n\n3. **Artificial Intelligence Foundations: Thinking Machines**: This course introduces key concepts behind AI, including machine learning and deep learning, and discusses the practical uses of AI technologies. [Learn more](https://learn.adsg.gov.ae/course/view.php?id=5534).\n\n4. **Programming Foundations: Artificial Intelligence**: This course is aimed at developers looking to merge their programming knowledge with AI competencies, covering machine learning, neural networks, and computer vision using Python. [Learn more](https://learn.adsg.gov.ae/course/view.php?id=24490).\n\n5. **AI in Business Essential Training**: Focuses on the applications of AI in business, including pricing products, marketing decisions, and financial markets. [Learn more](https://learn.adsg.gov.ae/course/view.php?id=4097).\n\nIf you have a specific area of AI you'\''re interested in, such as business applications, programming, or foundational concepts, let me know, and I can help narrow down the options!"
+
+            },
+
+            {
+
+                "role": "user",
+
+                "content": "tell me about the first"
+
+            }
+ 
+ 
+        ]
+
+}'
+ 
